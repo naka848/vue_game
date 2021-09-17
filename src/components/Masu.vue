@@ -16,21 +16,26 @@ export default {
   // 親コンポーネントから値を受け取る
   props:{
     count: Number,
+    number: Number,
   },
   methods:{
     doAction(){
-      // masuの値の更新
-      if(this.count % 2 === 0 ){
-        this.masu = "◯" ;
-      } else {
-        this.masu = "×";
-      }
+      if(this.masu === ""){
+        // masuの値の更新
+        this.masu = this.count % 2 === 0? "○" : "×"
       // result-eventイベントをthis.masuの値付きで呼び出す
       // $emitでresult-eventを発火→（親コンポーネントへ）→result-eventが発生し、appActionメソッドを呼び出す
-      // $emitって引数なくちゃだめ？？？？？？？？？？？？
-      this.$emit('result-event,')
-      console.log(this.count)
-    }
+      // $emitは引数なくてもいい！その時は「,」不要
+      this.$emit('result-event')
+      }
+      // 確認用
+      // console.log(this.count)
+      // console.log(this.number)
+      // こんな感じのことがしたい！！！！！numberのそれぞれのマスはなんて指定をしたらいいんだろう？？
+      // if(this.number:1 == this.number:2){
+      //   console.log("ビンゴ")
+      // }
+    },
   },
 };
 </script>

@@ -20,14 +20,15 @@ export default {
     return{
       // 子コンポーネントに渡すcountの初期化
       count: 0,
+      komasu: "",
     };
   },
   components: {
     Masu,
   },
   methods : {
-    appAction(){
-      this.count++
+    appAction(koMass){
+      this.komasu = 'koMass'
     }
   }
 };

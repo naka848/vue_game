@@ -9,7 +9,6 @@ export default {
   name: "Masu",
   data(){
     return{
-      // {{ masu }} の初期値の設定
       masu: "",
     };
   },
@@ -27,9 +26,7 @@ export default {
       }
       // result-eventイベントをthis.masuの値付きで呼び出す
       // $emitでresult-eventを発火→（親コンポーネントへ）→result-eventが発生し、appActionメソッドを呼び出す
-      // $emitって引数なくちゃだめ？？？？？？？？？？？？
-      this.$emit('result-event,')
-      console.log(this.count)
+      this.$emit('result-event,this.masu')
     }
   },
 };
@@ -42,6 +39,10 @@ export default {
   border: 1px solid black;
   text-align: center;
   font-size: 80px;
+  /* color: red; */
 }
 </style>
 
+
+
+// やりたいこと！クリックイベントがおきたらその情報を親に伝える！！

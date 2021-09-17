@@ -1,10 +1,8 @@
 <template>
     <div class="board">
       <!--  v-bind:count="count"…子コンポーネントに渡すcountの宣言 -->
-      <!-- v-on:result-event="appAction"…result-eventにappActionメソッドをバインド  -->
       <Masu
         v-bind:count="count"
-        v-on:result-event="appAction" 
         v-for="n of 9"
         v-bind:key="n"
       />
@@ -25,11 +23,6 @@ export default {
   components: {
     Masu,
   },
-  methods : {
-    appAction(){
-      this.count++
-    }
-  }
 };
 </script>
 
